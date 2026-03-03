@@ -1,6 +1,6 @@
 import 'dart:async' as async;
 
-import 'package:async_effects/src/core.dart';
+import 'package:fn/src/core.dart';
 
 // Keys are the concrete node Type, matching Override<F,T>.type.
 typedef ContextPayload = ({

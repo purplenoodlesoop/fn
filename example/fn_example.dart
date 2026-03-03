@@ -3,7 +3,7 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:async_effects/async_effects.dart';
+import 'package:fn/fn.dart';
 
 class Console {
   void write(Object message) {

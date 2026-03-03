@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:async_effects/async_effects.dart';
+import 'package:fn/fn.dart';
 
 class DoPrint extends Fx<void> {
   final Object? arg;

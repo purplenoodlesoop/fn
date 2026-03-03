@@ -1,4 +1,4 @@
-# async_effects
+# fn
 
 A lightweight Dart library for composable, testable asynchronous effects.
 
@@ -21,7 +21,7 @@ Effects are **lazy**, **named**, and **swappable**: any node in the call tree ca
 
 ## Overview
 
-Traditional DI requires passing dependencies explicitly or through a service locator. `async_effects` instead lets you **name** your effects as classes and **override** any of them in a parent effect — no parameter threading needed.
+Traditional DI requires passing dependencies explicitly or through a service locator. `fn` instead lets you **name** your effects as classes and **override** any of them in a parent effect — no parameter threading needed.
 
 ```dart
 class FetchUser extends Fx<User> {
@@ -44,11 +44,11 @@ final testApp = Fx<void>(
 
 ```yaml
 dependencies:
-  async_effects: ^1.0.0
+  fn: ^1.0.0
 ```
 
 ```dart
-import 'package:async_effects/async_effects.dart';
+import 'package:fn/fn.dart';
 
 void main() async {
   await Fx(() async {

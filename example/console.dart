@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:async_effects/async_effects.dart';
+import 'package:fn/fn.dart';
 
 class ReadNumber extends Fx<int> {
   ReadNumber() : super(() => int.parse(stdin.readLineSync()!));

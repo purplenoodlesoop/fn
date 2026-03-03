@@ -1,4 +1,4 @@
-name: async_effects
+name: fn
 description: Composable, testable async effects with zone-based dependency injection and no service locators.
 version: 1.0.0
 repository: https://github.com/purplenoodlesoop/fn

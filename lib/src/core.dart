@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:async_effects/src/context.dart';
-import 'package:async_effects/src/lazy_future_mixin.dart';
+import 'package:fn/src/context.dart';
+import 'package:fn/src/lazy_future_mixin.dart';
 import 'package:meta/meta.dart';
 
 sealed class AnyOverride {}

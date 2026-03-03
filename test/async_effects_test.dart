@@ -1,4 +1,4 @@
-import 'package:async_effects/async_effects.dart';
+import 'package:fn/fn.dart';
 import 'package:test/test.dart';
 
 // ─── Shared test nodes ────────────────────────────────────────────────────────

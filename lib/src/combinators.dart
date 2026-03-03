@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:async_effects/src/core.dart';
+import 'package:fn/src/core.dart';
 
 /// Retrieves a value of type [T] from the zone context.
 ///
