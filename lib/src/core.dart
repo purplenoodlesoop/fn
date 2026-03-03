@@ -9,7 +9,6 @@ sealed class AnyOverride {}
 /// Replaces every node of type [F] encountered in an effect's subtree with the
 /// result of [value]. The replacement receives the original node, so it can
 /// forward any constructor arguments.
-@optionalTypeArgs
 final class Override<F extends Node<T>, T> implements AnyOverride {
   final Fx<T> Function(F) value;
 
@@ -48,9 +47,9 @@ mixin _NodeMixin<T> implements Node<T> {
       // check — the actual runtime type is always the correct concrete node type.
       final replacement = (overrideFn as dynamic)(this as dynamic);
       if (replacement is _NodeMixin<T> && !identical(replacement, this)) {
-        final childOverrides =
-            Map<Type, dynamic>.from(Context.current.overrides)
-              ..remove(runtimeType);
+        final childOverrides = Map<Type, dynamic>.from(
+          Context.current.overrides,
+        )..remove(runtimeType);
         return Context.runZoned(
           replacement._runZoned,
           zoneValues: (
@@ -64,15 +63,14 @@ mixin _NodeMixin<T> implements Node<T> {
 
     // Merge this node's declared overrides into the zone so children see them.
     // Dynamic access avoids the smart-cast covariant field check at runtime.
-    final childOverrides =
-        overrides.isEmpty
-            ? Context.current.overrides
-            : <Type, dynamic>{
-              ...Context.current.overrides,
-              for (final e in overrides)
-                if (e is Override)
-                  (e as dynamic).type as Type: (e as dynamic).value,
-            };
+    final childOverrides = overrides.isEmpty
+        ? Context.current.overrides
+        : <Type, dynamic>{
+            ...Context.current.overrides,
+            for (final e in overrides)
+              if (e is Override)
+                (e as dynamic).type as Type: (e as dynamic).value,
+          };
 
     return Context.runZoned(
       _run,
