@@ -8,9 +8,7 @@ environment:
 
 # Add regular dependencies here.
 dependencies:
-  pure: ^0.3.0
   meta: ^1.17.0
-  stream_transform: ^2.1.1
   # path: ^1.8.0
 
 dev_dependencies:
