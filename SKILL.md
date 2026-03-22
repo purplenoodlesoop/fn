@@ -1,0 +1,5 @@
+- Inline body of the effect. DO NOT create a static method to redirect the body passed to the constructor.
+- Split and break down Fx and StreamFx into smaller, more focused classes.
+- Instead of writing Fx<List<T>> or Fx<IList<T>>, use StreamFx<T> and collect the result at the end with `toList()`.
+- Split reusable pieces of logic into separate effects.
+- Split up big effects into smaller ones and ones that compose other effects, describing the high-level logic.
